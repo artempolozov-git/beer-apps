@@ -1,5 +1,7 @@
 <template>
-  <div class="news__block" :style="inlineStyle"></div>
+  <div class="news__block">
+    <img :src="background">
+  </div>
 </template>
 
 <script>
@@ -7,13 +9,6 @@
         name: "News",
         props: {
             background: String,
-        },
-        computed: {
-            inlineStyle () {
-                return {
-                    backgroundImage: `url(${this.background})`
-                }
-            }
         },
     }
 </script>
@@ -23,11 +18,10 @@
     font-size: $additional-fontsize;
     margin: 0 0 20px 0;
   }
-  .news__block {
+  .news__block > img {
     width: 100%;
     height: 150px;
     border-radius: 21px;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
   }
 </style>

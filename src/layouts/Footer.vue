@@ -1,7 +1,7 @@
 <template>
   <footer class="footer-main__container">
     <div class="footer-navigation__container">
-      <div class="footer-navigation__blocks" v-on:click="goToPage('/home')">
+      <div class="footer-navigation__blocks" v-on:click="goToPage('/')">
         <img class="images" src="@/assets/icons/home.svg">
         <p class="navigation-text">Главная</p>
       </div>
@@ -43,6 +43,7 @@
   padding: 10px 40px;
   box-sizing: border-box;
   background-color: $main-color;
+  z-index: 9;
 }
 .footer-navigation__container {
   display: flex;

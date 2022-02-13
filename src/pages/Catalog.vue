@@ -22,16 +22,16 @@
           <img class="images dropdown" src="@/assets/icons/dropdown.svg">
         </summary>
         <div class="items" v-for="(item, catalogs) in beersItems" :key="catalogs">
-          <p class="item" v-for="(beers, catalogs) in item.beers" :key="catalogs">
-            <span v-on:click="goToPage(beers.id)">{{beers.name}}</span>
+          <p class="item" v-for="(beers, catalogs) in item.beers" :key="catalogs" v-on:click="goToPage(beers.id)">
+            <span>{{beers.name}}</span>
           </p>
         </div>
       </details>
 
       <div class="catalog-item__container" v-for="(items, catalogs) in catalogItems" :key="catalogs">
-        <div class="catalog-item__wrapper" v-for="(item, catalogs) in items.catalog" :key="catalogs" v-on:click="goToPage(item.id)">
+        <div class="catalog-item__wrapper" v-for="(item, catalogs) in items.catalog" :key="catalogs">
           <img class="images" :src="item.images">
-          <div class="item-title">{{item.title}}</div>
+          <div class="item-title"  v-on:click="goToPage(item.id)">{{item.title}}</div>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@
                         beers: [
                             {
                                 name: 'Светлое пиво',
-                                id: '',
+                                id: '/product',
                             },
                             {
                                 name: 'Темное пиво',

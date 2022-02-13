@@ -1,6 +1,7 @@
 <template>
   <header class="header-main__container">
     <div class="page-menu__container">
+      <img class="images" v-show="show" src="@/assets/icons/back-arrow.svg" v-on:click="goToPage(id)">
       <h1 class="page-title">{{title}}</h1>
       <div class="page-menu">
         <img class="images" src="@/assets/icons/favorites.svg">
@@ -20,7 +21,15 @@
         name: "Header",
         props: {
             title: String,
-        }
+            id: String,
+            show: Boolean,
+        },
+        methods: {
+            goToPage(page) {
+                this.$router.push(page);
+                window.scrollTo(0,0);
+            }
+        },
     }
 </script>
 
@@ -43,6 +52,10 @@
     width: 6vw;
     margin: 0 0 0 20px;
   }
+}
+.images {
+  width: 5vw;
+  margin: 0 15px 0 0;
 }
 .page-title {
   font-size: $title-fontsize;
