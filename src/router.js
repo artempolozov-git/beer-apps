@@ -8,7 +8,7 @@ const router = new Router({
     mode: 'history',
     routes: [
         {
-            path: '/',
+            path: '/home',
             name: 'home',
             components: {
                 footer: Footer,
@@ -17,6 +17,20 @@ const router = new Router({
             },
             meta: {
                 title: 'Пивное приложение',
+                description: '',
+            },
+            children: [],
+        },
+        {
+            path: '/catalog',
+            name: 'catalog',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/pages/Catalog.vue')
+            },
+            meta: {
+                title: 'Каталог',
                 description: '',
             },
             children: [],

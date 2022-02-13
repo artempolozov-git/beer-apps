@@ -1,12 +1,12 @@
 <template>
   <footer class="footer-main__container">
     <div class="footer-navigation__container">
-      <div class="footer-navigation__blocks">
+      <div class="footer-navigation__blocks" v-on:click="goToPage('/home')">
         <img class="images" src="@/assets/icons/home.svg">
         <p class="navigation-text">Главная</p>
       </div>
 
-      <div class="footer-navigation__blocks indent">
+      <div class="footer-navigation__blocks indent" v-on:click="goToPage('/catalog')">
         <img class="images" src="@/assets/icons/catalog.svg">
         <p class="navigation-text">Каталог</p>
       </div>
@@ -27,6 +27,12 @@
 <script>
     export default {
         name: "Footer",
+        methods: {
+            goToPage(page) {
+                this.$router.push(page);
+                window.scrollTo(0,0);
+            }
+        },
     }
 </script>
 

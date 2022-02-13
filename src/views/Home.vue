@@ -26,7 +26,7 @@
     </div>
 
     <div class="section__container">
-      <div class="feedback-button__container">
+      <div class="buttons">
         <span>Связаться с нами</span>
       </div>
     </div>
@@ -105,7 +105,7 @@
     grid-auto-rows: auto;
     grid-gap: 20px;
   }
-  .feedback-button__container {
+  .buttons {
     height: auto;
     padding: 30px;
     box-sizing: border-box;
