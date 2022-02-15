@@ -5,15 +5,17 @@
             :id="header.id"
             :show="header.show"/>
 
+    <products-card></products-card>
+
     <div class="product-main__container">
       <div class="product-grid__container">
-        <products-items v-for="(products, productItem) in productsItems"
-                        :key="productItem"
-                        :images="products.images"
-                        :sum="products.sum"
-                        :name="products.name"
-                        :strength="products.strength"
-                        :density="products.density"></products-items>
+        <products-items v-for="(item, products) in productsItems"
+                        :key="products"
+                        :images="item.images"
+                        :sum="item.sum"
+                        :name="item.name"
+                        :strength="item.strength"
+                        :density="item.density"></products-items>
       </div>
 
       <div class="popular-products__container">
@@ -28,9 +30,11 @@
     import Header from "@/layouts/Header";
     import ProductsItems from "@/components/ProductsItems";
     import PopularProducts from "@/components/PopularProducts";
+    import ProductsCard from "@/popups/products-card";
     export default {
         name: "Product",
         components: {
+            ProductsCard,
             PopularProducts,
             ProductsItems,
             Header,
@@ -73,7 +77,7 @@
                         strength: '4.5%',
                         density: '13.0%',
                     },
-                ]
+                ],
             }
         },
     }

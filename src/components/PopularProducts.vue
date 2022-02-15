@@ -90,7 +90,7 @@
     margin-bottom: 10px;
   }
   .product-sum {
-    color: $highlight-buttons-color;
+    color: $highlight-color;
     font-size: 3.5vw;
     font-weight: bold;
   }
@@ -103,7 +103,6 @@
     margin-bottom: 20px;
   }
   .buttons {
-    width: fit-content;
     margin: auto;
     padding: 15px 40px;
     box-sizing: border-box;

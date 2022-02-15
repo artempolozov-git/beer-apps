@@ -1,14 +1,14 @@
 <template>
   <div class="products-items__container">
-    <div class="product-images"><img :src="images"></div>
+    <div class="product-images" @click="showProductsCard"><img :src="images"></div>
     <div class="product-sum__wrapper">
       <div class="product-sum">{{sum}}</div>
       <img class="images" src="@/assets/icons/favorites.svg">
     </div>
     <div class="product-name">{{name}}</div>
     <div class="parameters__wrapper">
-      <p class="product-parameters"><span>Крепость: </span><span>{{strength}}</span></p>
-      <p class="product-parameters"><span>Плотность: </span><span>{{density}}</span></p>
+      <p class="product-parameters">Крепость: <span>{{strength}}</span></p>
+      <p class="product-parameters">Плотность: <span>{{density}}</span></p>
     </div>
     <div class="buttons">
       <span>Добавить</span>
@@ -25,6 +25,16 @@
           name: String,
           strength: String,
           density: String,
+        },
+        methods: {
+            goToPage(page) {
+                this.$router.push(page);
+                window.scrollTo(0,0);
+            },
+            showProductsCard() {
+                let form = document.getElementById("products-card");
+                form.style.display = (form.style.display == 'none') ? 'block' : 'none'
+            },
         },
     }
 </script>
@@ -50,7 +60,7 @@
   margin-bottom: 20px;
 }
 .product-sum {
-  color: $highlight-buttons-color;
+  color: $highlight-color;
   font-size: $additional-fontsize;
   font-weight: bold;
 }

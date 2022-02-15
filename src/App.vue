@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'App',
     computed: {
@@ -60,6 +59,6 @@ export default {
     flex: 1 0 auto;
     align-self: center;
     box-sizing: border-box;
-    width: -webkit-fill-available;
+    width: 100%;
   }
 </style>

@@ -106,7 +106,6 @@
     grid-gap: 20px;
   }
   .buttons {
-    height: auto;
     padding: 30px;
     box-sizing: border-box;
     border-radius: 21px;

@@ -36,12 +36,12 @@ const router = new Router({
             children: [],
         },
         {
-            path: '/product',
-            name: 'product',
+            path: '/products',
+            name: 'products',
             components: {
                 footer: Footer,
                 //aside: Aside,
-                default: () => import('@/pages/Product.vue')
+                default: () => import('@/pages/Products.vue')
             },
             meta: {
                 title: 'Светлое пиво',

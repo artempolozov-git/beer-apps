@@ -1,7 +1,7 @@
 <template>
   <header class="header-main__container">
     <div class="page-menu__container">
-      <img class="images" v-show="show" src="@/assets/icons/back-arrow.svg" v-on:click="goToPage(id)">
+      <img class="images" v-show="show" src="@/assets/icons/back-arrow.svg" @click="goToPage(id)">
       <h1 class="page-title">{{title}}</h1>
       <div class="page-menu">
         <img class="images" src="@/assets/icons/favorites.svg">
