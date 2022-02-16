@@ -3,17 +3,17 @@
     <div class="card-main__container" v-for="(item, cards) in productsCard" :key="cards">
       <div class="page-title__wrapper">
         <img class="images" src="@/assets/icons/back-arrow.svg" @click="showProductsCard">
-        <div class="card-title">{{item.name}}</div>
+        <div class="card-title">{{item.names}}</div>
       </div>
       <div class="card-main__wrapper">
         <div class="product-card__images"><img :src="item.images"></div>
 
         <div class="product-sum__wrapper">
-          <div class="product-sum">{{item.sum}}</div>
+          <div class="product-sum">{{item.sum}}р. / 0.5л</div>
           <img class="images" src="@/assets/icons/favorites.svg">
         </div>
 
-        <div class="product-name">{{item.name}}</div>
+        <div class="product-name">{{item.names}}</div>
 
         <div class="product-description__wrapper">
           <div class="subtitle">Описание:</div>
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div class="total-price">Итого <span>100р</span></div>
+        <div class="total-price">Итого: <span>100р</span></div>
         <div class="buttons">
           <span>Добавить в корзину</span>
         </div>
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-    import PopularProducts from "@/components/PopularProducts";
+    import PopularProducts from "@/components/popular-products";
     export default {
         name: "products-card",
         components: {PopularProducts},
@@ -67,9 +67,9 @@
             return {
                 productsCard: [
                     {
-                        name: 'Заправское светлое',
+                        names: 'Заправское светлое',
                         images: require('../assets/images/products/zapravskoe.webp'),
-                        sum: '45р. / 0.5л',
+                        sum: 45,
                         description: 'Пиво непастеризованное светлое. Очень легкое светлое классическое пиво с приятным вкусом и освежающим ароматом.',
                         strength: '4.0%',
                         density: '13.0%',
@@ -140,7 +140,7 @@
     display: flex;
     margin: 0 auto 30px auto;
     width: 100%;
-    height: 450px;
+    height: auto;
     object-fit: cover;
   }
   .product-sum__wrapper {

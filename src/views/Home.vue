@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    import BonusCard from "@/home/BonusCard";
+    import BonusCard from "@/home/bonus-card";
     import Actions from "@/home/Actions";
     import News from "@/home/News";
     import Header from "@/layouts/Header";

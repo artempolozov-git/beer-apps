@@ -16,7 +16,7 @@ const router = new Router({
                 default: () => import('@/views/Home.vue')
             },
             meta: {
-                title: 'Пивное приложение',
+                title: 'Главная',
                 description: '',
             },
             children: [],
@@ -45,6 +45,20 @@ const router = new Router({
             },
             meta: {
                 title: 'Светлое пиво',
+                description: '',
+            },
+            children: [],
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/pages/Cart.vue')
+            },
+            meta: {
+                title: 'Корзина',
                 description: '',
             },
             children: [],

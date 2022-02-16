@@ -2,10 +2,10 @@
   <div class="products-items__container">
     <div class="product-images" @click="showProductsCard"><img :src="images"></div>
     <div class="product-sum__wrapper">
-      <div class="product-sum">{{sum}}</div>
+      <div class="product-sum">{{sum}}р. / 0.5л</div>
       <img class="images" src="@/assets/icons/favorites.svg">
     </div>
-    <div class="product-name">{{name}}</div>
+    <div class="product-name">{{names}}</div>
     <div class="parameters__wrapper">
       <p class="product-parameters">Крепость: <span>{{strength}}</span></p>
       <p class="product-parameters">Плотность: <span>{{density}}</span></p>
@@ -21,8 +21,8 @@
         name: "ProductsItems",
         props: {
           images: String,
-          sum: String,
-          name: String,
+          sum: Number,
+          names: String,
           strength: String,
           density: String,
         },
@@ -50,7 +50,7 @@
 }
 .product-images > img{
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
   margin-bottom: 20px;
 }

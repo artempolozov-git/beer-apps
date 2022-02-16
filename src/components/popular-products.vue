@@ -8,7 +8,7 @@
             <div class="product-sum">{{product.sum}}</div>
             <img class="images" src="@/assets/icons/favorites.svg">
           </div>
-          <div class="product-name">{{product.name}}</div>
+          <div class="product-name">{{product.names}}</div>
           <div class="buttons">
             <span>Добавить</span>
           </div>
@@ -35,22 +35,22 @@
                     {
                         images: require('../assets/images/products/gerrgroll.webp'),
                         sum: '45р. / 0.5л',
-                        name: 'ГЕРР ГРОЛЛ',
+                        names: 'ГЕРР ГРОЛЛ',
                     },
                     {
                         images: require('../assets/images/products/shevron.webp'),
                         sum: '50р. / 0.5л',
-                        name: 'SHEVRON',
+                        names: 'SHEVRON',
                     },
                     {
                         images: require('../assets/images/products/peshkov.webp'),
                         sum: '55р. / 0.5л',
-                        name: 'ПЕШКОВ',
+                        names: 'ПЕШКОВ',
                     },
                     {
                         images: require('../assets/images/products/zapravskoe.webp'),
                         sum: '45р. / 0.5л',
-                        name: 'Заправское',
+                        names: 'Заправское',
                     },
                 ],
                 swiperOption: {
@@ -80,7 +80,7 @@
   }
   .product-images > img{
     width: 100%;
-    height: 200px;
+    height: auto;
     object-fit: cover;
     margin-bottom: 20px;
   }

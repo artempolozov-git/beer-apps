@@ -23,7 +23,7 @@
         </summary>
         <div class="items" v-for="(item, catalogs) in beersItems" :key="catalogs">
           <p class="item" v-for="(beers, catalogs) in item.beers" :key="catalogs" v-on:click="goToPage('/products')">
-            <span>{{beers.name}}</span>
+            <span>{{beers.names}}</span>
           </p>
         </div>
       </details>
@@ -56,19 +56,19 @@
                     {
                         beers: [
                             {
-                                name: 'Светлое пиво',
+                                names: 'Светлое пиво',
                             },
                             {
-                                name: 'Темное пиво',
+                                names: 'Темное пиво',
                             },
                             {
-                                name: 'Пшеничное пиво',
+                                names: 'Пшеничное пиво',
                             },
                             {
-                                name: 'Крафтовое пиво',
+                                names: 'Крафтовое пиво',
                             },
                             {
-                                name: 'Безалкогольное пиво',
+                                names: 'Безалкогольное пиво',
                             },
                         ],
                     }
@@ -124,7 +124,6 @@
   font-weight: bold;
 }
 .buttons {
-  width: fit-content;
   margin-left: auto;
   padding: 15px 40px;
   box-sizing: border-box;

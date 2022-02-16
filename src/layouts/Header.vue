@@ -5,7 +5,7 @@
       <h1 class="page-title">{{title}}</h1>
       <div class="page-menu">
         <img class="images" src="@/assets/icons/favorites.svg">
-        <img class="images" src="@/assets/icons/basket.svg">
+        <img class="images" src="@/assets/icons/basket.svg" @click="goToPage('/cart')">
       </div>
     </div>
     <div class="search">

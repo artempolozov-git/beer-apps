@@ -13,7 +13,7 @@
                         :key="products"
                         :images="item.images"
                         :sum="item.sum"
-                        :name="item.name"
+                        :names="item.names"
                         :strength="item.strength"
                         :density="item.density"></products-items>
       </div>
@@ -28,8 +28,8 @@
 
 <script>
     import Header from "@/layouts/Header";
-    import ProductsItems from "@/components/ProductsItems";
-    import PopularProducts from "@/components/PopularProducts";
+    import ProductsItems from "@/components/products-items";
+    import PopularProducts from "@/components/popular-products";
     import ProductsCard from "@/popups/products-card";
     export default {
         name: "Product",
@@ -51,29 +51,29 @@
                 productsItems: [
                     {
                         images: require('../assets/images/products/zapravskoe.webp'),
-                        sum: '45р. / 0.5л',
-                        name: 'Заправское светлое',
+                        sum: 45,
+                        names: 'Заправское светлое',
                         strength: '4.0%',
                         density: '13.0%',
                     },
                     {
                         images: require('../assets/images/products/hmelmeister.webp'),
-                        sum: '50р. / 0.5л',
-                        name: 'ХмельМейстер светлое',
+                        sum: 50,
+                        names: 'ХмельМейстер светлое',
                         strength: '4.5%',
                         density: '12.0%',
                     },
                     {
                         images: require('../assets/images/products/beerhoven.webp'),
-                        sum: '55р. / 0.5л',
-                        name: 'BEERHOVEN светлое',
+                        sum: 55,
+                        names: 'BEERHOVEN светлое',
                         strength: '4.7%',
                         density: '12.0%',
                     },
                     {
                         images: require('../assets/images/products/kansler.webp'),
-                        sum: '60р. / 0.5л',
-                        name: 'Канцлеръ светлое',
+                        sum: 60,
+                        names: 'Канцлеръ светлое',
                         strength: '4.5%',
                         density: '13.0%',
                     },
