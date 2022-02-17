@@ -10,7 +10,7 @@
       <p class="product-parameters">Крепость: <span>{{strength}}</span></p>
       <p class="product-parameters">Плотность: <span>{{density}}</span></p>
     </div>
-    <div class="buttons">
+    <div class="buttons" @click="showProductPopup">
       <span>Добавить</span>
     </div>
   </div>
@@ -30,6 +30,10 @@
             goToPage(page) {
                 this.$router.push(page);
                 window.scrollTo(0,0);
+            },
+            showProductPopup() {
+                let form = document.getElementById("product-popup");
+                form.style.display = (form.style.display == 'none') ? 'block' : 'none'
             },
         },
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="news__block">
+  <div class="news__block" @click="showNewsPopup">
     <img :src="background">
   </div>
 </template>
@@ -9,6 +9,12 @@
         name: "News",
         props: {
             background: String,
+        },
+        methods: {
+            showNewsPopup() {
+                let form = document.getElementById("news-popup");
+                form.style.display = (form.style.display == 'none') ? 'block' : 'none'
+            },
         },
     }
 </script>

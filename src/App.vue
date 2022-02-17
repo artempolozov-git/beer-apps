@@ -6,12 +6,21 @@
       </transition>
     </div>
     <router-view name="footer"></router-view>
+    <bonus-card-popup></bonus-card-popup>
+    <product-popup></product-popup>
+    <shops-popup></shops-popup>
+    <news-popup></news-popup>
   </div>
 </template>
 
 <script>
+import BonusCardPopup from "@/popups/bonusCard-popup";
+import ProductPopup from "@/popups/products-popup";
+import ShopsPopup from "@/popups/shops-popup";
+import NewsPopup from "@/popups/news-popup";
 export default {
     name: 'App',
+    components: {NewsPopup, ShopsPopup, ProductPopup, BonusCardPopup},
     computed: {
         defaultViewKey: function() {
             return this.$route.name;

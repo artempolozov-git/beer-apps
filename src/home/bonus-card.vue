@@ -1,5 +1,5 @@
 <template>
-  <div class="card-main__container">
+  <div class="card-main__container"  @click="showBonusCard">
     <div class="title__wrapper">
       <div class="card-title">Бонусная карта</div>
       <img class="images" src="@/assets/icons/info.svg">
@@ -19,6 +19,12 @@ export default {
         cardNumber: String,
         barcode: String,
       },
+    methods: {
+        showBonusCard() {
+            let form = document.getElementById("bonus-card");
+            form.style.display = (form.style.display == 'none') ? 'block' : 'none'
+        },
+    }
 }
 </script>
 

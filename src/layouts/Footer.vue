@@ -16,7 +16,7 @@
         <p class="navigation-text">Акции</p>
       </div>
 
-      <div class="footer-navigation__blocks indent">
+      <div class="footer-navigation__blocks indent" @click="showShopsPopup">
         <img class="images" src="@/assets/icons/shops.svg">
         <p class="navigation-text">Магазины</p>
       </div>
@@ -31,7 +31,11 @@
             goToPage(page) {
                 this.$router.push(page);
                 window.scrollTo(0,0);
-            }
+            },
+            showShopsPopup() {
+                let form = document.getElementById("shops-popup");
+                form.style.display = (form.style.display == 'none') ? 'block' : 'none'
+            },
         },
     }
 </script>

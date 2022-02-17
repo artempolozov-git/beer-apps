@@ -15,7 +15,7 @@
         </div>
 
         <div class="popular-products__container">
-          <h2 class="section-title">Популярный выбор</h2>
+          <h2 class="section-title">Товары участвующие в акции</h2>
           <popular-products></popular-products>
         </div>
       </div>
@@ -65,9 +65,12 @@
   object-fit: cover;
   margin-bottom: 20px;
 }
+.actions-information__wrapper {
+  margin-bottom: 30px;
+}
 .subtitle {
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .action-text {
   color: $additional-color;

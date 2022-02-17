@@ -8,7 +8,7 @@
           <span class="shop">Магазин: </span>
           <span>г. Липецк, пр-т. Победы, 116</span>
         </div>
-        <div class="buttons">
+        <div class="buttons" @click="showShopsPopup">
           <span>Выбрать</span>
         </div>
       </div>
@@ -98,14 +98,18 @@
                             },
                         ]
                     }
-                  ]
+                ]
             }
         },
         methods: {
             goToPage(page) {
                 this.$router.push(page);
                 window.scrollTo(0,0);
-            }
+            },
+            showShopsPopup() {
+                let form = document.getElementById("shops-popup");
+                form.style.display = (form.style.display == 'none') ? 'block' : 'none'
+            },
         },
     }
 </script>
