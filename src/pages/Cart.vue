@@ -5,7 +5,7 @@
     <div class="cart-main__container">
       <div class="product-in-cart__container">
 
-        <div class="products-quantity">Количество товаров: <span>(1)</span></div>
+        <div class="products-quantity">Количество товаров: <span>({{quantity}})</span></div>
 
         <div class="products-card__container">
           <products-cart v-for="(item, cart) in productsCart"
@@ -57,7 +57,7 @@
             </div>
           </div>
 
-          <div class="details__wrapper">
+          <div class="details__wrapper border">
             <div class="subtitle">Добавьте комментарий к заказу:</div>
             <div class="data__container">
               <textarea name="Сообщение" placeholder="Комментарий"></textarea>
@@ -85,6 +85,7 @@
         },
         data () {
             return {
+                quantity: 1,
                 headerPages: [
                     {
                         title: 'Корзина',
@@ -99,6 +100,12 @@
                         bottle: 10,
                     },
                 ]
+            }
+        },
+        methods: {
+            goToPage(page) {
+                this.$router.push(page);
+                window.scrollTo(0,0);
             }
         },
     }
@@ -133,6 +140,9 @@
     padding: 20px 0;
     border-bottom: 1px #F0F0F0 solid;
   }
+  .border {
+    border-bottom: 0;
+  }
   .address-shop__container {
     display: flex;
     align-items: center;
@@ -156,18 +166,18 @@
     box-sizing: border-box;
     border-radius: 21px;
     background-color: #F6F6F6;
-    border: none;
+    border: 2px solid #F6F6F6;
     cursor: pointer;
       &:focus {
         outline: none;
-        border: none;
+        background-color: #ffffff;
+        border: 2px solid $highlight-buttons-color;
       }
   }
   .images {
     width: 6vw;
     margin-right: 10px;
   }
-
   .choose-payments__wrapper {
     display: flex;
     align-items: center;
@@ -180,12 +190,15 @@
   }
   .choose-payments__wrapper label {
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
     border-radius: 21px;
     user-select: none;
+    background: #F6F6F6;
+    border: 2px solid #F6F6F6;
   }
   .choose-payments__wrapper input[type=radio]:checked + label {
-    background: #F6F6F6;
+    background-color: #ffffff;
+    border: 2px solid $highlight-buttons-color;
   }
   .data__container > textarea {
     width: 100%;
@@ -195,8 +208,12 @@
     padding: 20px;
     box-sizing: border-box;
     outline: none;
-    border: none;
+    border: 2px solid #F6F6F6;
     background: #F6F6F6;
+    &:focus {
+      background-color: #ffffff;
+      border: 2px solid $highlight-buttons-color;
+    }
   }
   .total-price {
     font-size: $additional-fontsize;

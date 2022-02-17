@@ -2,7 +2,7 @@
   <div class="section-main__container">
     <swiper class="swiper" :options="swiperOption">
       <swiper-slide v-for="(actions, banners) in actionsBanners" :key="banners">
-        <img class="actions" :src="actions.banner">
+        <img class="actions" :src="actions.banner" @click="goToPage('/actions')">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -39,6 +39,12 @@
                     },
                   ],
             }
+        },
+        methods: {
+            goToPage(page) {
+                this.$router.push(page);
+                window.scrollTo(0,0);
+            },
         },
     }
 </script>

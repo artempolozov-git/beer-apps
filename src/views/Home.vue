@@ -12,7 +12,7 @@
 
     <div class="section__container">
       <h2 class="section-title">Акции</h2>
-      <actions></actions>
+      <actions-slider></actions-slider>
     </div>
 
     <div class="section__container">
@@ -44,7 +44,7 @@
 
 <script>
     import BonusCard from "@/home/bonus-card";
-    import Actions from "@/home/Actions";
+    import ActionsSlider from "@/home/actions-slider";
     import News from "@/home/News";
     import Header from "@/layouts/Header";
     export default {
@@ -52,7 +52,7 @@
         components: {
             Header,
             News,
-            Actions,
+            ActionsSlider,
             BonusCard
         },
         data () {

@@ -50,6 +50,20 @@ const router = new Router({
             children: [],
         },
         {
+            path: '/products-card',
+            name: 'products-card',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/pages/products-card.vue')
+            },
+            meta: {
+                title: 'Карточка товара',
+                description: '',
+            },
+            children: [],
+        },
+        {
             path: '/cart',
             name: 'cart',
             components: {
@@ -59,6 +73,48 @@ const router = new Router({
             },
             meta: {
                 title: 'Корзина',
+                description: '',
+            },
+            children: [],
+        },
+        {
+            path: '/favorites',
+            name: 'favorites',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/pages/Favorites.vue')
+            },
+            meta: {
+                title: 'Избранное',
+                description: '',
+            },
+            children: [],
+        },
+        {
+            path: '/actions',
+            name: 'actions',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/pages/Actions.vue')
+            },
+            meta: {
+                title: 'Акции',
+                description: '',
+            },
+            children: [],
+        },
+        {
+            path: '/actions-page',
+            name: 'actions-page',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/components/actions-page.vue')
+            },
+            meta: {
+                title: 'Акция',
                 description: '',
             },
             children: [],

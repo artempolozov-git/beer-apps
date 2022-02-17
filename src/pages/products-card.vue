@@ -1,10 +1,11 @@
 <template>
-  <div id="products-card" style="display: none;">
+  <div class="page__container">
+    <Header v-for="(header, titlePages) in headerPages" :key="titlePages"
+            :title="header.title"
+            :id="header.id"
+            :show="header.show"/>
+
     <div class="card-main__container" v-for="(item, cards) in productsCard" :key="cards">
-      <div class="page-title__wrapper">
-        <img class="images" src="@/assets/icons/back-arrow.svg" @click="showProductsCard">
-        <div class="card-title">{{item.names}}</div>
-      </div>
       <div class="card-main__wrapper">
         <div class="product-card__images"><img :src="item.images"></div>
 
@@ -48,11 +49,11 @@
         <div class="buttons">
           <span>Добавить в корзину</span>
         </div>
+      </div>
 
-        <div class="popular-products__container">
-          <h2 class="section-title">Популярный выбор</h2>
-          <popular-products></popular-products>
-        </div>
+      <div class="popular-products__container">
+        <h2 class="section-title">Популярный выбор</h2>
+        <popular-products></popular-products>
       </div>
     </div>
   </div>
@@ -60,11 +61,22 @@
 
 <script>
     import PopularProducts from "@/components/popular-products";
+    import Header from "@/layouts/Header";
     export default {
         name: "products-card",
-        components: {PopularProducts},
+        components: {
+            PopularProducts,
+            Header,
+        },
         data () {
             return {
+                headerPages: [
+                    {
+                        title: 'Заправское светлое',
+                        id: '/products',
+                        show: true,
+                    }
+                ],
                 productsCard: [
                     {
                         names: 'Заправское светлое',
@@ -80,10 +92,6 @@
             }
         },
         methods: {
-            showProductsCard() {
-                let form = document.getElementById("products-card");
-                form.style.display = (form.style.display == 'none') ? 'block' : 'none'
-            },
             decrement () {
                 if (this.count === 0) return;
                 this.count -= 1;
@@ -103,35 +111,9 @@
 </script>
 
 <style lang="scss" scoped>
-  #products-card {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    overflow: auto;
-    z-index: 99;
-  }
   .card-main__container {
     height: fit-content;
     background-color: #ffffff;
-  }
-  .page-title__wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    padding: 30px 20px 0 20px;
-    .images {
-      width: 5vw;
-      margin: 0 15px 0 0;
-    }
-    .card-title {
-      font-size: $title-fontsize;
-      font-weight: bold;
-    }
   }
   .card-main__wrapper {
     padding: 0 50px 30px 50px;
@@ -169,7 +151,7 @@
     font-weight: bold;
   }
   .text {
-    color: #BCBCBC;
+    color: $additional-color;
   }
   .volume__wrapper {
     display: flex;
@@ -214,12 +196,14 @@
   }
   .buttons {
     padding: 20px;
-    margin: 0 0 30px 0;
     box-sizing: border-box;
     border-radius: 21px;
     text-align: center;
     color: #ffffff;
     font-weight: bold;
     background-color: $highlight-buttons-color;
+  }
+  .popular-products__container {
+    padding: 0 20px 30px 20px;
   }
 </style>

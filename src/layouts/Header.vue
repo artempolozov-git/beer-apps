@@ -4,7 +4,7 @@
       <img class="images" v-show="show" src="@/assets/icons/back-arrow.svg" @click="goToPage(id)">
       <h1 class="page-title">{{title}}</h1>
       <div class="page-menu">
-        <img class="images" src="@/assets/icons/favorites.svg">
+        <img class="images" src="@/assets/icons/favorites.svg" @click="goToPage('/favorites')">
         <img class="images" src="@/assets/icons/basket.svg" @click="goToPage('/cart')">
       </div>
     </div>

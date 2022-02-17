@@ -1,6 +1,6 @@
 <template>
   <div class="products-items__container">
-    <div class="product-images" @click="showProductsCard"><img :src="images"></div>
+    <div class="product-images" @click="goToPage('/products-card')"><img :src="images"></div>
     <div class="product-sum__wrapper">
       <div class="product-sum">{{sum}}р. / 0.5л</div>
       <img class="images" src="@/assets/icons/favorites.svg">
@@ -30,10 +30,6 @@
             goToPage(page) {
                 this.$router.push(page);
                 window.scrollTo(0,0);
-            },
-            showProductsCard() {
-                let form = document.getElementById("products-card");
-                form.style.display = (form.style.display == 'none') ? 'block' : 'none'
             },
         },
     }

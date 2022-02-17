@@ -1,23 +1,20 @@
 <template>
-  <div>
-    <swiper class="swiper" :options="swiperOption">
-      <swiper-slide class="popular-product__container" v-for="(product, popular) in popularProducts" :key="popular">
-        <div class="products-items__container">
-          <div class="product-images"><img :src="product.images"></div>
-          <div class="product-sum__wrapper">
-            <div class="product-sum">{{product.sum}}</div>
-            <img class="images" src="@/assets/icons/favorites.svg">
-          </div>
-          <div class="product-name">{{product.names}}</div>
-          <div class="buttons">
-            <span>Добавить</span>
-          </div>
+  <swiper class="swiper" :options="swiperOption">
+    <swiper-slide class="popular-product__container" v-for="(product, popular) in popularProducts" :key="popular">
+      <div class="products-items__container">
+        <div class="product-images"><img :src="product.images"></div>
+        <div class="product-sum__wrapper">
+          <div class="product-sum">{{product.sum}}</div>
+          <img class="images" src="@/assets/icons/favorites.svg">
         </div>
-      </swiper-slide>
-
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
-  </div>
+        <div class="product-name">{{product.names}}</div>
+        <div class="buttons">
+          <span>Добавить</span>
+        </div>
+      </div>
+    </swiper-slide>
+    <div class="swiper-pagination" slot="pagination"></div>
+  </swiper>
 </template>
 
 <script>
@@ -80,7 +77,7 @@
   }
   .product-images > img{
     width: 100%;
-    height: auto;
+    height: 230px;
     object-fit: cover;
     margin-bottom: 20px;
   }
@@ -112,10 +109,13 @@
     font-weight: bold;
     background-color: $highlight-buttons-color;
   }
-  .swiper-slide {
-    height: 440px;
-  }
   .swiper-container {
     padding: 10px 10px 0 10px;
+  }
+  .swiper-pagination-bullets {
+    bottom: 0;
+  }
+  .swiper-pagination {
+    position: inherit;
   }
 </style>

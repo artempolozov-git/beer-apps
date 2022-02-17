@@ -11,7 +11,7 @@
         <p class="navigation-text">Каталог</p>
       </div>
 
-      <div class="footer-navigation__blocks indent">
+      <div class="footer-navigation__blocks indent" v-on:click="goToPage('/actions')">
         <img class="images" src="@/assets/icons/actions.svg">
         <p class="navigation-text">Акции</p>
       </div>

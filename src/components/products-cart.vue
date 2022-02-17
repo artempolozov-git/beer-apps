@@ -62,6 +62,6 @@
     margin-bottom: 20px;
   }
   .text {
-    color: #BCBCBC;
+    color: $additional-color;
   }
 </style>
