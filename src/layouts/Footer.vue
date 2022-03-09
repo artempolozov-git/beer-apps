@@ -20,6 +20,11 @@
         <img class="images" src="@/assets/icons/shops.svg">
         <p class="navigation-text">Магазины</p>
       </div>
+
+      <div class="footer-navigation__blocks indent" v-on:click="goToPage('/orders')">
+        <img class="images" src="@/assets/icons/orders-menu.svg">
+        <p class="navigation-text">Заказы</p>
+      </div>
     </div>
   </footer>
 </template>
@@ -44,14 +49,14 @@
 .footer-main__container {
   position: sticky;
   bottom: 0;
-  padding: 10px 40px;
+  padding: 15px 40px;
   box-sizing: border-box;
-  background-color: $main-color;
+  background-color: $down-menu-color;
   z-index: 9;
 }
 .footer-navigation__container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 .footer-navigation__blocks {
@@ -61,7 +66,7 @@
   margin-left: auto;
 }
 .images {
-  width: 6vw;
+  height: 6vw;
   margin: auto;
   display: flex;
 }

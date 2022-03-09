@@ -64,7 +64,7 @@
             </div>
           </div>
 
-          <div class="total-price">Всего к оплате: <span>100р.</span></div>
+          <div class="total-price">Всего к оплате: <span>{{totalPrice}}р.</span></div>
           <div class="buttons">
             <span>Добавить в корзину</span>
           </div>
@@ -85,6 +85,7 @@
         },
         data () {
             return {
+                totalPrice: 300,
                 quantity: 1,
                 headerPages: [
                     {
@@ -201,8 +202,9 @@
     border: 2px solid #F6F6F6;
   }
   .choose-payments__wrapper input[type=radio]:checked + label {
-    background-color: #ffffff;
+    background-color: $highlight-buttons-color;
     border: 2px solid $highlight-buttons-color;
+    color: #ffffff;
   }
   .data__container > textarea {
     width: 100%;

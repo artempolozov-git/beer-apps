@@ -119,6 +119,34 @@ const router = new Router({
             },
             children: [],
         },
+        {
+            path: '/orders',
+            name: 'orders',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/pages/Orders.vue')
+            },
+            meta: {
+                title: 'Заказы',
+                description: '',
+            },
+            children: [],
+        },
+        {
+            path: '/orders-page',
+            name: 'orders-page',
+            components: {
+                footer: Footer,
+                //aside: Aside,
+                default: () => import('@/components/orders-page.vue')
+            },
+            meta: {
+                title: 'Заказы',
+                description: '',
+            },
+            children: [],
+        },
     ]
 });
 
